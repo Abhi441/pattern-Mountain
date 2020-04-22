@@ -1,0 +1,54 @@
+# pattern-Mountain
+
+
+
+
+
+                       1           1
+                       1 2       2 1  
+                       1 2 3   3 2 1
+                       1 2 3 4 3 2 1 
+
+import java.util.*;
+class Main{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int nsp = 2*n-3;
+    int nst = 1;
+    //row
+    int row = 1;
+        while(row<= n){
+             // work for stars
+             int val = row;
+             int cst = 1;
+    while(cst<= nst){
+      System.out.print(cst +"\t");
+      cst++;
+    }
+      // work space
+    int csp = 1;
+    while(csp<= nsp){
+      System.out.print("\t");
+      csp++;
+    }
+      
+      //work Star
+     cst = 1;
+     if(row == n){
+         cst = 2;
+         val = row -1;
+     }
+    while(cst<= nst){
+      System.out.print(val +"\t");
+      val--;
+      cst++;
+    }
+       System.out.println();
+       row = row +1;
+       nsp = nsp - 2;
+       nst = nst + 1;
+    }
+    
+  }
+}
